@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @ovisiomario
 - 👀 I’m interested in Blockchain.
-- 🌱 I’m currently learning Rust.
-- 💞️ I’m looking to collaborate on Solana Dev.
+- 🌱 I’m currently learning Javascript.
+- 💞️ I’m looking to collaborate on FE Dev.
 - 📫 How to reach me?  @ovisiomario on all socials
 
 <!---
