@@ -1,8 +1,5 @@
-- 👋 Hi, I’m @ovisiomario
-- 👀 I’m interested in Blockchain.
-- 🌱 I’m currently learning Javascript.
-- 💞️ I’m looking to collaborate on FE Dev.
-- 📫 How to reach me?  @ovisiomario on all socials
+- 👋 Hi, I’m @ovisiomario. I don't know how to code, I just leverage the power of Cursor + Claude AI.
+
 
 <!---
 ovisiomario/ovisiomario is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
