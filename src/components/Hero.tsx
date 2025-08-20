@@ -63,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({ isProductManagerView: _isProductManagerView
             </div>
             <div className="subtitle-container">
               <p className="hero-subtitle">
-                I turn messy ideas into clear roadmaps and guide teams to ship high-quality products.
+                I turn messy ideas into clear roadmaps and guide teams to ship high-quality products
               </p>
               <div className="psychology-tag" data-number="2">
                 <span className="psychology-label">Service</span>
