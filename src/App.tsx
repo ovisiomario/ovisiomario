@@ -31,7 +31,7 @@ function App() {
         </div>
       </div>
 
-      <Hero isProductManagerView={isProductManagerView} toggleView={toggleView} />
+      <Hero isProductManagerView={isProductManagerView} />
       <Methodology isProductManagerView={isProductManagerView} />
       <Responsibilities isProductManagerView={isProductManagerView} />
       <Portfolio isProductManagerView={isProductManagerView} />

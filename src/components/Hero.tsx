@@ -11,10 +11,9 @@ const scrollToSection = (sectionId: string) => {
 
 interface HeroProps {
   isProductManagerView: boolean;
-  toggleView: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ isProductManagerView }) => {
+const Hero: React.FC<HeroProps> = ({ isProductManagerView: _isProductManagerView }) => {
   return (
     <>
 
