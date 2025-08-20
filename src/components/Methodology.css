@@ -1,0 +1,506 @@
+/* Methodology Section */
+.methodology {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Add wireframe border only in PM view */
+.pm-view .methodology {
+  border-top: 3px dashed #ddd;
+  border-bottom: 3px dashed #ddd;
+}
+
+.user-view .methodology {
+  border: none;
+  background: #ffffff;
+}
+
+.methodology::before {
+  content: 'METHODOLOGY SECTION - v2.0';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 10px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.methodology-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: 'Kalam', cursive;
+  margin-bottom: 10px;
+}
+
+.wireframe-note {
+  font-size: 9px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Methodology Grid */
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* For 6 steps in 3x2 layout */
+@media (min-width: 900px) {
+  .methodology-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .methodology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.methodology-step {
+  background: white;
+  border: 3px solid #333;
+  border-radius: 8px;
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.methodology-step:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0px #333;
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #2563eb;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 14px;
+  border: 3px solid #333;
+}
+
+.step-content {
+  margin-bottom: 15px;
+}
+
+.step-title {
+  font-family: 'Kalam', cursive;
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
+
+.step-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.step-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tool-tag {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  border: 1px dashed #2563eb;
+}
+
+.step-annotation {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Methodology Summary */
+.methodology-summary {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.summary-box {
+  background: rgba(34, 197, 94, 0.03);
+  border: 3px dashed #22c55e;
+  border-radius: 12px;
+  padding: 35px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.1);
+}
+
+.summary-box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #22c55e, #16a34a, #22c55e);
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.summary-box h4 {
+  font-family: 'Kalam', cursive;
+  font-size: 1.4rem;
+  color: #22c55e;
+  margin-bottom: 25px;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-box h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #22c55e;
+  border-radius: 2px;
+}
+
+/* Leadership Overview Stats */
+.leadership-overview {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(37, 99, 235, 0.05);
+  border: 2px dashed #2563eb;
+  border-radius: 10px;
+}
+
+.leadership-stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-number {
+  font-family: 'Kalam', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2563eb;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsibilities Section */
+.responsibilities-section {
+  margin-top: 25px;
+}
+
+.responsibilities-title {
+  font-family: 'Kalam', cursive;
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.responsibilities-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #2d3748;
+  border-radius: 2px;
+}
+
+.responsibilities-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 18px;
+}
+
+.responsibilities-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a5568;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.responsibilities-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.responsibilities-list li strong {
+  color: #2d3748;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.responsibilities-list li::before {
+  content: attr(data-icon);
+  font-size: 16px;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+/* PM Analysis Tags */
+.pm-analysis-tags {
+  margin: 40px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+}
+
+.analysis-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px dashed #2563eb;
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.analysis-tag::before {
+  content: attr(data-number);
+  width: 22px;
+  height: 22px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tag-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.methodology-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.methodology-footer .wireframe-note {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .methodology {
+    padding: 60px 0;
+  }
+  
+  .methodology-container {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .methodology-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .methodology-step {
+    padding: 20px;
+  }
+  
+  .step-title {
+    font-size: 1.1rem;
+  }
+  
+  .summary-box {
+    padding: 25px;
+    max-width: 100%;
+  }
+  
+  .summary-box h4 {
+    font-size: 1.2rem;
+  }
+  
+  .leadership-overview {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .leadership-stat {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .responsibilities-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .responsibilities-list li {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .methodology-step {
+    padding: 15px;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    top: -12px;
+  }
+}
+
+/* PM Mode Post-it Note */
+.pm-postit-note {
+  margin: 20px 0 30px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.postit-content {
+  background: #ffeb3b;
+  padding: 15px 20px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  position: relative;
+  transform: rotate(-1deg);
+  font-family: 'Kalam', cursive;
+}
+
+.postit-pin {
+  position: absolute;
+  top: -8px;
+  right: 15px;
+  font-size: 18px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.postit-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Mobile responsive for post-it note */
+@media (max-width: 768px) {
+  .postit-content {
+    max-width: 300px;
+    padding: 12px 16px;
+  }
+  
+  .postit-text {
+    font-size: 12px;
+  }
+}

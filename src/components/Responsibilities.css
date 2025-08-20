@@ -1,0 +1,285 @@
+/* Responsibilities Section */
+.responsibilities {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Add wireframe border only in PM view */
+.pm-view .responsibilities {
+  border-top: 3px dashed #ddd;
+  border-bottom: 3px dashed #ddd;
+}
+
+.user-view .responsibilities {
+  border: none;
+  background: #ffffff;
+}
+
+.responsibilities::before {
+  content: 'RESPONSIBILITIES SECTION - v1.0';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 10px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.responsibilities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: 'Kalam', cursive;
+  margin-bottom: 10px;
+}
+
+.wireframe-note {
+  font-size: 9px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Leadership Overview Stats */
+.leadership-overview {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 60px;
+  padding: 30px;
+  background: rgba(37, 99, 235, 0.05);
+  border: 3px solid #333;
+  border-radius: 12px;
+  position: relative;
+}
+
+.pm-view .leadership-overview {
+  border-style: dashed;
+}
+
+.user-view .leadership-overview {
+  border-style: solid;
+}
+
+.leadership-stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-number {
+  font-family: 'Kalam', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Responsibilities Grid */
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.responsibility-card {
+  background: white;
+  border: 3px solid #333;
+  border-radius: 8px;
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.responsibility-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0px #333;
+}
+
+.responsibility-card::before {
+  content: attr(data-icon);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.1);
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.responsibility-title {
+  font-family: 'Kalam', cursive;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.responsibility-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* PM Analysis Tags */
+.pm-analysis-tags {
+  margin: 40px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+}
+
+.analysis-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px dashed #2563eb;
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.analysis-tag::before {
+  content: attr(data-number);
+  width: 22px;
+  height: 22px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tag-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.responsibilities-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.responsibilities-footer .wireframe-note {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .responsibilities {
+    padding: 60px 0;
+  }
+  
+  .responsibilities-container {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .leadership-overview {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .leadership-stat {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .responsibilities-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .responsibility-card {
+    padding: 20px;
+  }
+  
+  .responsibility-card::before {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .responsibility-card {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .responsibility-card::before {
+    align-self: center;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}

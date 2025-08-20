@@ -1,0 +1,1023 @@
+/* Hero Section - Wireframe Style */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/* Add wireframe border only in PM view */
+.pm-view .hero {
+  border: 3px dashed #666;
+}
+
+.user-view .hero {
+  border: none;
+  background: #ffffff;
+}
+
+
+
+
+
+.hero::before {
+  content: 'HERO SECTION - v0.1';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 10px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 6rem;
+  align-items: start;
+  padding: 60px 0;
+}
+
+.hero-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-self: center;
+}
+
+/* Position psychology tag #3 next to profile picture */
+.hero-image-container .psychology-tag {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+}
+
+.profile-photo {
+  width: 240px;
+  height: 240px;
+  border-radius: 8px;
+  border: 3px solid #333;
+  background: #f0f0f0;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  position: relative;
+  filter: grayscale(0.3);
+}
+
+.profile-photo:hover {
+  transform: rotate(-1deg);
+  box-shadow: 3px 3px 0px #333;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image::after {
+  content: 'PROFILE IMAGE\A[240x240]';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #666;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  white-space: pre;
+  line-height: 1.2;
+  width: 100%;
+}
+
+
+
+.hero-text {
+  text-align: left;
+  padding-top: 20px;
+}
+
+.title-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  font-family: 'Kalam', cursive;
+  color: #333;
+  position: relative;
+  flex: 1;
+}
+
+/* PM Mode: Highlight title with psychology tag color */
+.pm-view .hero-title {
+  background: rgba(239, 68, 68, 0.03);
+  border: 2px dashed rgba(239, 68, 68, 0.4);
+  border-radius: 6px;
+  padding: 15px;
+  margin: -5px;
+}
+
+.hero-title::after {
+  content: 'H1 - MAIN HEADLINE';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 9px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  background: #fafafa;
+  padding: 2px 4px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.highlight {
+  background: #ffeb3b;
+  color: #333;
+  padding: 2px 6px;
+  border: 2px solid #333;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.subtitle-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 600px;
+  color: #555;
+  font-family: 'Kalam', cursive;
+  position: relative;
+  border-left: 3px solid #ddd;
+  padding-left: 20px;
+  flex: 1;
+}
+
+/* PM Mode: Highlight subtitle with psychology tag color */
+.pm-view .hero-subtitle {
+  background: rgba(34, 197, 94, 0.03);
+  border: 2px dashed rgba(34, 197, 94, 0.4);
+  border-radius: 6px;
+  padding: 15px;
+  margin: -5px;
+}
+
+.hero-subtitle::after {
+  content: 'SUBTITLE - PRODUCT MANAGER DESCRIPTION';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  font-size: 9px;
+  color: #999;
+  font-family: 'Courier New', monospace;
+  background: #fafafa;
+  padding: 2px 4px;
+}
+
+/* Hero Toggle Styles */
+.hero-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 1.2rem;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+}
+
+/* Specific styling for psychology tag in toggle container - positioned outside */
+.toggle-container .psychology-tag {
+  margin-top: 0;
+  align-self: flex-start;
+  position: absolute;
+  right: -55px;
+  top: 5px;
+}
+
+/* Remove toggle button highlighting in PM mode */
+
+.pm-view .hero-image {
+  background: rgba(249, 115, 22, 0.03);
+  border: 2px dashed rgba(249, 115, 22, 0.4);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+/* Jira Ticket Styles - Only visible in PM mode */
+.jira-ticket {
+  margin-top: 15px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  max-width: 280px;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.ticket-id {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  color: #0052cc;
+}
+
+.ticket-status {
+  background: #00875a;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ticket-content {
+  padding: 12px;
+}
+
+.ticket-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.ticket-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.assignee, .priority {
+  font-size: 10px;
+  color: #666;
+}
+
+.assignee::before {
+  content: "👤 ";
+}
+
+.priority::before {
+  content: "⚡ ";
+}
+
+.ticket-description {
+  font-size: 10px;
+  color: #555;
+  line-height: 1.4;
+  background: #f8f9fa;
+  padding: 8px;
+  border-radius: 3px;
+  border-left: 3px solid #0052cc;
+}
+
+/* WhatsApp CTA Button - Separate Section */
+.cta-section {
+  margin-top: 0.6rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Remove section background - only highlight the button container */
+.cta-section {
+  background: transparent;
+  border: none;
+}
+
+.cta-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Position psychology tag #5 on right side of CTA section */
+.cta-section .psychology-tag {
+  position: absolute;
+  right: -55px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+}
+
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 2px solid #25D366;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-cta:hover {
+  background: #128C7E;
+  border-color: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0px #333;
+}
+
+/* PM Mode: Highlight CTA button with purple color (tag #5) - same as profile picture */
+.pm-view .cta-container {
+  background: rgba(147, 51, 234, 0.03);
+  border: 2px dashed rgba(147, 51, 234, 0.4);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.pm-view .whatsapp-cta {
+  background: rgba(243, 244, 246, 0.5) !important;
+  color: #7c3aed !important;
+  border: 2px dashed rgba(147, 51, 234, 0.6) !important;
+  box-shadow: none !important;
+}
+
+.pm-view .whatsapp-cta:hover {
+  background: rgba(243, 244, 246, 0.8) !important;
+  color: #7c3aed !important;
+  border: 2px dashed rgba(147, 51, 234, 0.8) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+/* Above the Fold Line - Only visible in PM mode */
+.above-fold-line {
+  margin-top: 25px;
+  padding: 15px 0;
+  position: relative;
+}
+
+.fold-line {
+  width: 100%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #ff6b35 0px,
+    #ff6b35 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  position: relative;
+  margin: 15px 0;
+}
+
+.fold-line::before {
+  content: "✂️";
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  background: white;
+  padding: 0 8px;
+  font-size: 16px;
+}
+
+.fold-annotation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.fold-annotation-above {
+  margin-bottom: 10px;
+}
+
+.fold-annotation-below {
+  margin-top: 10px;
+}
+
+.fold-label {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 4px 8px;
+  border: 1px dashed #ff6b35;
+  border-radius: 3px;
+}
+
+/* Different styling for "Under the Fold" */
+.fold-annotation-below .fold-label {
+  color: #666;
+  background: rgba(102, 102, 102, 0.1);
+  border: 1px dashed #666;
+}
+
+.fold-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Mobile responsive for above-fold-line */
+@media (max-width: 768px) {
+  .above-fold-line {
+    margin-top: 30px;
+    padding: 15px 0;
+  }
+  
+  .fold-description {
+    font-size: 9px;
+    max-width: 300px;
+  }
+  
+  .fold-label {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+}
+
+.hero-toggle .toggle-btn {
+  width: 80px;
+  height: 40px;
+  background: #e5e7eb;
+  border: 3px solid #333;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-toggle .toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-toggle .toggle-btn.active {
+  background: #22c55e;
+  border-color: #333;
+}
+
+.hero-toggle .toggle-btn::before {
+  content: '';
+  width: 28px;
+  height: 28px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  left: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-toggle .toggle-btn.active::before {
+  left: 44px;
+}
+
+.hero-toggle .toggle-btn::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3px 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero-toggle .toggle-hint {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Social Proof Container */
+.social-proof-container {
+  position: relative;
+  margin-top: 0.8rem;
+}
+
+/* Social Proof Section */
+.social-proof {
+  margin-top: 0;
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 700px;
+}
+
+/* Position psychology tag #4 on right side of social proof section */
+.social-proof-container .psychology-tag {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+}
+
+/* User view - no highlighting for social proof */
+.user-view .social-proof {
+  border: 2px dashed #d1d5db;
+  background: rgba(243, 244, 246, 0.5);
+}
+
+.proof-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.proof-label {
+  background: #fafafa;
+  padding: 4px 8px;
+  font-size: 9px;
+  color: #666;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* PM Mode: Highlight social proof section with blue color (tag #4) */
+.pm-view .social-proof {
+  background: rgba(37, 99, 235, 0.03);
+  border: 2px dashed rgba(37, 99, 235, 0.4);
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.company-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.company-box:hover {
+  transform: translateY(-3px);
+}
+
+.company-box:hover .company-placeholder {
+  border-color: #2563eb;
+  background: #f0f7ff;
+}
+
+.click-hint {
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  color: #999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: -15px;
+  white-space: nowrap;
+}
+
+.company-box:hover .click-hint {
+  opacity: 1;
+}
+
+
+
+.company-placeholder {
+  width: 120px;
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  color: #666;
+  background: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+  line-height: 1.1;
+  padding: 4px;
+}
+
+.project-note {
+  font-family: 'Kalam', cursive;
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+}
+
+.proof-annotation {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #aaa;
+  opacity: 0.7;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Psychology Tags */
+.psychology-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 3px;
+  padding: 4px 6px;
+  margin-top: 5px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* Tag 1 - Red (Hook) */
+.psychology-tag[data-number="1"] {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px dashed #ef4444;
+}
+
+.psychology-tag[data-number="1"]::before {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.psychology-tag[data-number="1"] .psychology-label {
+  color: rgba(239, 68, 68, 0.9);
+}
+
+/* Tag 2 - Green (Service) */
+.psychology-tag[data-number="2"] {
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px dashed #22c55e;
+}
+
+.psychology-tag[data-number="2"]::before {
+  background: rgba(34, 197, 94, 0.8);
+}
+
+.psychology-tag[data-number="2"] .psychology-label {
+  color: rgba(34, 197, 94, 0.9);
+}
+
+/* Tag 3 - Orange (Visual) */
+.psychology-tag[data-number="3"] {
+  background: rgba(249, 115, 22, 0.05);
+  border: 1px dashed #f97316;
+}
+
+.psychology-tag[data-number="3"]::before {
+  background: rgba(249, 115, 22, 0.8);
+}
+
+.psychology-tag[data-number="3"] .psychology-label {
+  color: rgba(249, 115, 22, 0.9);
+}
+
+/* Tag 4 - Blue (Social Proof) */
+.psychology-tag[data-number="4"] {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px dashed #2563eb;
+}
+
+.psychology-tag[data-number="4"]::before {
+  background: rgba(37, 99, 235, 0.8);
+}
+
+.psychology-tag[data-number="4"] .psychology-label {
+  color: rgba(37, 99, 235, 0.9);
+}
+
+/* Tag 5 - Purple (CTA) */
+.psychology-tag[data-number="5"] {
+  background: rgba(147, 51, 234, 0.05);
+  border: 1px dashed #9333ea;
+}
+
+.psychology-tag[data-number="5"]::before {
+  background: rgba(147, 51, 234, 0.8);
+}
+
+.psychology-tag[data-number="5"] .psychology-label {
+  color: rgba(147, 51, 234, 0.9);
+}
+
+.psychology-tag::before {
+  content: attr(data-number);
+  width: 14px;
+  height: 14px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.psychology-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* Simple Developer Comment */
+.dev-comment-simple {
+  margin-top: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #999;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+
+
+/* Responsive Design */
+
+
+@media (max-width: 768px) {
+  .social-proof {
+    margin-top: 20px;
+    padding: 15px;
+  }
+  
+  .companies-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .company-placeholder {
+    width: 120px;
+    height: 50px;
+    font-size: 9px;
+  }
+  
+  .dev-comment-simple {
+    margin-top: 12px;
+    font-size: 10px;
+  }
+  
+
+  
+
+  
+  .hero-container {
+    padding: 0 20px;
+  }
+  
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+    padding: 40px 0;
+  }
+  
+  .hero-text {
+    text-align: center;
+    padding-top: 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 100%;
+    border-left: none;
+    padding-left: 0;
+    border-top: 3px solid #ddd;
+    padding-top: 15px;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-image-container .psychology-tag {
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .hero-toggle {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .toggle-container {
+    gap: 8px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .toggle-container .psychology-tag {
+    margin-top: 0;
+    right: -45px;
+    top: 8px;
+  }
+  
+  .title-container {
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .psychology-tag {
+    margin-top: 3px;
+    padding: 3px 5px;
+  }
+  
+  .psychology-tag::before {
+    width: 12px;
+    height: 12px;
+    font-size: 7px;
+  }
+  
+  .psychology-label {
+    font-size: 7px;
+  }
+  
+  .subtitle-container {
+    gap: 8px;
+  }
+  
+  .proof-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .hero-toggle .toggle-btn {
+    width: 70px;
+    height: 35px;
+  }
+  
+  .hero-toggle .toggle-btn::before {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .hero-toggle .toggle-btn.active::before {
+    left: 38px;
+  }
+  
+  .hero-toggle .toggle-btn::after {
+    font-size: 9px;
+    top: -22px;
+  }
+  
+  .hero-toggle .toggle-hint {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .social-proof-container {
+    margin-top: 0.6rem;
+  }
+  
+  .social-proof-container .psychology-tag {
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .social-proof {
+    max-width: 100%;
+    padding: 12px;
+  }
+  
+  .cta-section {
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+    justify-content: flex-start;
+  }
+  
+  .cta-section .psychology-tag {
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .whatsapp-cta {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 15px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-toggle {
+    align-items: center;
+  }
+}
