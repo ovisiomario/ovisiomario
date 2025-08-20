@@ -5,7 +5,7 @@ interface PortfolioProps {
   isProductManagerView: boolean;
 }
 
-const Portfolio: React.FC<PortfolioProps> = ({ isProductManagerView }) => {
+const Portfolio: React.FC<PortfolioProps> = ({ isProductManagerView: _isProductManagerView }) => {
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
 
   const toggleProject = (projectId: string) => {

@@ -4,7 +4,7 @@ interface ResponsibilitiesProps {
   isProductManagerView: boolean;
 }
 
-const Responsibilities: React.FC<ResponsibilitiesProps> = ({ isProductManagerView }) => {
+const Responsibilities: React.FC<ResponsibilitiesProps> = ({ isProductManagerView: _isProductManagerView }) => {
   return (
     <section id="responsibilities" className="responsibilities section">
       <div className="responsibilities-container">

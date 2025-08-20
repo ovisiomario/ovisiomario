@@ -14,7 +14,7 @@ interface HeroProps {
   toggleView: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ isProductManagerView, toggleView }) => {
+const Hero: React.FC<HeroProps> = ({ isProductManagerView }) => {
   return (
     <>
 

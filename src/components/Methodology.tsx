@@ -4,7 +4,7 @@ interface MethodologyProps {
   isProductManagerView: boolean;
 }
 
-const Methodology: React.FC<MethodologyProps> = ({ isProductManagerView }) => {
+const Methodology: React.FC<MethodologyProps> = ({ isProductManagerView: _isProductManagerView }) => {
   return (
     <section id="methodology" className="methodology section">
       <div className="methodology-container">
