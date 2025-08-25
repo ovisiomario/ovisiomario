@@ -77,21 +77,55 @@
   margin-top: 0;
 }
 
-.profile-photo {
+.profile-video {
   width: 240px;
   height: 240px;
-  border-radius: 8px;
+  border-radius: 24px; /* Loom-like rounded corners */
   border: 3px solid #333;
-  background: #f0f0f0;
+  background: #000;
   transition: all 0.3s ease;
   object-fit: cover;
   position: relative;
-  filter: grayscale(0.3);
+  overflow: hidden;
 }
 
-.profile-photo:hover {
+.profile-video:hover {
   transform: rotate(-1deg);
   box-shadow: 3px 3px 0px #333;
+}
+
+/* Inline controls under the video */
+/* Faded play overlay (Loom-like) */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.video-overlay::before {
+  content: '';
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  mask: radial-gradient(circle 30px at center, transparent 29px, black 30px);
+}
+
+.video-overlay::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 18px solid #000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
 .hero-image {
@@ -99,7 +133,7 @@
 }
 
 .hero-image::after {
-  content: 'PROFILE IMAGE\A[240x240]';
+  content: 'PROFILE VIDEO\A[240x240]';
   position: absolute;
   bottom: -30px;
   left: 50%;
