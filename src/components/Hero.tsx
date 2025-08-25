@@ -1,4 +1,5 @@
-import profilePhoto from '../assets/profile_ovisiomario.webp'
+import landingVideo from '../assets/Landing - Final.mp4'
+import { useRef, useState, useEffect } from 'react'
 import './Hero.css'
 
 // Scroll function
@@ -14,6 +15,37 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ isProductManagerView: _isProductManagerView }) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+    const onPlay = () => setIsPlaying(true)
+    const onPause = () => setIsPlaying(false)
+    const onEnded = () => setIsPlaying(false)
+    el.addEventListener('play', onPlay)
+    el.addEventListener('pause', onPause)
+    el.addEventListener('ended', onEnded)
+    return () => {
+      el.removeEventListener('play', onPlay)
+      el.removeEventListener('pause', onPause)
+      el.removeEventListener('ended', onEnded)
+    }
+  }, [])
+
+  // Pause video whenever the user scrolls
+  useEffect(() => {
+    const onScroll = () => {
+      const el = videoRef.current
+      if (!el) return
+      if (!el.paused && !el.ended) {
+        el.pause()
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   return (
     <>
 
@@ -25,11 +57,28 @@ const Hero: React.FC<HeroProps> = ({ isProductManagerView: _isProductManagerView
         <div className="hero-content">
                                 <div className="hero-image-container">
                         <div className="hero-image">
-                          <img
-                            src={profilePhoto}
-                            alt="Mario - Professional Services"
-                            className="profile-photo"
+                          <video
+                            ref={videoRef}
+                            src={landingVideo}
+                            className="profile-video"
+                            loop
+                            playsInline
+                            preload="auto"
+                            controls
+                            aria-label="Intro video - Mario Professional Services"
                           />
+                          {!isPlaying && (
+                            <button
+                              type="button"
+                              className="video-overlay"
+                              aria-label="Play video"
+                              onClick={() => {
+                                const el = videoRef.current
+                                if (!el) return
+                                el.play().catch(() => {})
+                              }}
+                            />
+                          )}
                           {/* Jira Ticket - Only in PM Mode */}
                           <div className="jira-ticket">
                           <div className="ticket-header">
